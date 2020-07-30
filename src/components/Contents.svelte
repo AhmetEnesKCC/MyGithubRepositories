@@ -25,7 +25,7 @@
         font-family: "Roboto Thin";
         font-size: 20px;
         h3 {
-            font-size: 30px;
+            font-size: 25px;
             text-align: center;
             opacity: 70%;
         } p {
@@ -43,6 +43,13 @@
         justify-content: space-around;
         align-items: center;
     }
+    @media screen and(max-width: 800px) {
+        :global(.cards) {
+            h3 {
+                font-size: 25px;
+            }
+        }
+    }
 
 
 </style>
@@ -50,8 +57,8 @@
     {#each resArr as repos}
         <Card class="cards"><Content><h3>{repos.name}</h3><p>{repos.description}</p></Content><Actions fullBleed>
             <Button on:click={() => window.location.href=repos.html_url} color="secondary" >Go To Github<i class="material-icons">arrow_forward</i></Button>
-            {#if repos.homepage != null}
-                <Button on:click={() => repos.homepage = null ? window.location.href=repos.homepage : console.log("Page Could not Found")} color="secondary" >Go To Web Page<i class="material-icons">arrow_forward</i></Button>
+            {#if repos.homepage.length > 6}
+                <Button on:click={() => window.location.href=repos.homepage} color="secondary" >Go To Web Page<i class="material-icons">arrow_forward</i></Button>
                 {/if}
 
 
