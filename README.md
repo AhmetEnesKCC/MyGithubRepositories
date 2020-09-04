@@ -3,7 +3,7 @@ View My GITHUB repositories
 --> I USED  
     
 + Svelte JS
-+ JAvascript
++ Javascript
 + Sass
 + Svelte-material-ui
 + Surge (for deploy)
